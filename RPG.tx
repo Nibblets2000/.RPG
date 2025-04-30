@@ -1,2 +1,42 @@
 Program:
-    'Your journey begins with' | 'The journey begins with'
+    'Your journey begins with' | 'The journey begins with' subject+=Subject
+    action += Action
+    'Thus, the journey concludes.'
+;
+
+Subject:
+    User | Party
+;
+
+User:
+
+;
+
+Party:
+
+;
+
+Profile:
+
+
+;
+
+Action:
+    Declaration | ConFor | ConIf | |
+;
+
+Declaration:
+    'has'
+;
+
+ConFor:
+
+;
+
+ConIf:
+
+;
+
+Comment:
+  /\/\/.*$/
+;
