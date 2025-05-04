@@ -1,0 +1,53 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+3106132199472[ label="{Program|}"]
+
+3106131876816[ label="{User|}"]
+
+3106131872976[ label="{Profile|name: STRING\lclass: ID\l}"]
+
+3106131746000[ label="{Item|name: ID\ldesc: ID\lquant: INT\l}"]
+
+3106131749344[ label="{*Action|}"]
+
+3106131830128[ label="{*Declaration|}"]
+
+3106131549712[ label="{Area|name: STRING\ldesc: STRING\l}"]
+
+3106131554880[ label="{Mob|name: STRING\l}"]
+
+3106131777616[ label="{ConFor|condition: ID\l}"]
+
+3106131778896[ label="{ConIf|condition: ID\l}"]
+
+
+
+3106132199472 -> 3106131876816[arrowtail=diamond, dir=both, headlabel="subject 1..*"]
+3106132199472 -> 3106131749344[arrowtail=diamond, dir=both, headlabel="action 0..*"]
+3106131876816 -> 3106131872976[arrowtail=diamond, dir=both, headlabel="profile "]
+3106131872976 -> 3106131746000[arrowtail=diamond, dir=both, headlabel="items 0..*"]
+3106131749344 -> 3106131830128 [dir=back]
+3106131749344 -> 3106131777616 [dir=back]
+3106131749344 -> 3106131778896 [dir=back]
+3106131830128 -> 3106131554880 [dir=back]
+3106131830128 -> 3106131746000 [dir=back]
+3106131830128 -> 3106131549712 [dir=back]
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>Comment</b></td><td>\/\/.*$</td>
+	</tr>
+</table> >]
+
+
+}

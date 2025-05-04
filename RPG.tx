@@ -1,40 +1,51 @@
 Program:
-    'Your journey begins with' | 'The journey begins with' subject+=Subject
-    action += Action
+    ('Your journey begins with' | 'The journey begins with') subject+=User
+    action *= Action
     'Thus, the journey concludes.'
 ;
 
-Subject:
-    User | Party
-;
-
 User:
-
-;
-
-Party:
-
+    profile = Profile
 ;
 
 Profile:
+    name=STRING
+    class=ID
+    items*=Item
+;
 
-
+Item:
+    name = ID
+    desc = ID
+    quant = INT
 ;
 
 Action:
-    Declaration | ConFor | ConIf | |
+    Declaration | ConFor | ConIf
 ;
 
 Declaration:
-    'has'
+    ('party has' | 'there is') 'a'? (Mob | Item | Area)
+;
+
+
+Area:
+    name = STRING
+    desc = STRING
+;
+
+Mob:
+    ('Goblin'|'Skeleton'|'Demon'|'Slime'|'Minotaur')
+    name = STRING
 ;
 
 ConFor:
-
+    'until' | 'while' condition = ID
 ;
 
-ConIf:
 
+ConIf:
+    'if' condition = ID
 ;
 
 Comment:
