@@ -1,7 +1,7 @@
 The journey begins with Dabish, a level 15 Knight
 for 100 turns {
     if turn is parted true by 3 then {
-        if 3 is parted true by 5 then {
+        if turn is parted true by 5 then {
             Dabish states "YARGH!"
         }
         otherwise{
@@ -9,7 +9,7 @@ for 100 turns {
         }
     }
     otherwise{
-        if 3 is parted true by 5 then{
+        if turn is parted true by 5 then{
             Dabish states "A FOR THE DAY!"
         }
         otherwise{

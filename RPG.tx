@@ -13,7 +13,7 @@ Item:
 ;
 
 Action:
-    Declaration | ConIf | ConFor | Fight | Discover | Speak | Count
+    Declaration | ConIf | ConFor | Fight | Discover | Speak | Count | LookAround
 ;
 
 Mob:
@@ -47,7 +47,9 @@ Otherwise:
     '}'
 ;
 
-
+LookAround:
+    player=ID "looks around"
+;
 
 Fight:
     player=[User] 'attacks the' entity=[Mob] '!'

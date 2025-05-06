@@ -158,8 +158,10 @@ def interpret_action(c, turn=None):
     elif c.__class__.__name__ == "Count":
         print(f"We are on Turn {turn}")
 
+
+
     else:
-        print(f"{c.player.name} does... nothing?")
+        print(f"Our hero does... nothing?")
 
 
 
@@ -175,11 +177,11 @@ def interpret_program(model):
 
 def main(debug=False):
     from textx import metamodel_from_file
-    with open('FizzBuzz.RPG', 'r') as f:
+    with open('TheBattle!.RPG', 'r') as f:
         print(f.read())
     print()
     rPG_mm = metamodel_from_file('RPG.tx') #Insert grammar file here
-    rPG_model = rPG_mm.model_from_file('FizzBuzz.RPG') #Insert program file here
+    rPG_model = rPG_mm.model_from_file('TheBattle!.RPG') #Insert program file here
 
 
 
