@@ -1,51 +1,79 @@
 Program:
-    ('Your journey begins with' | 'The journey begins with') subject+=User
-    action *= Action
-    'Thus, the journey concludes.'
+    'The journey begins with' subject=User 
+    action*=Action
+    'What will our hero do?' | 'What will our heroes do?'
 ;
 
 User:
-    profile = Profile
-;
-
-Profile:
-    name=STRING
-    class=ID
-    items*=Item
+    name=ID ', a level' level=INT role=ID
 ;
 
 Item:
-    name = ID
-    desc = ID
-    quant = INT
+    name=STRING | quant=INT name=STRING
 ;
 
 Action:
-    Declaration | ConFor | ConIf
-;
-
-Declaration:
-    ('party has' | 'there is') 'a'? (Mob | Item | Area)
-;
-
-
-Area:
-    name = STRING
-    desc = STRING
+    Declaration | ConIf | ConFor | Fight | Discover | Speak | Count
 ;
 
 Mob:
-    ('Goblin'|'Skeleton'|'Demon'|'Slime'|'Minotaur')
-    name = STRING
+   'level' level=INT name=ID
 ;
 
-ConFor:
-    'until' | 'while' condition = ID
+Declaration:
+     player=[User] 'encounters' ('a')? entity=Mob | Item
 ;
 
+Speak:
+    player=[User] 'states' speech=STRING
+;
+
+ConFor: 
+    'for' iterations=INT 'turns' '{'
+    action*=Action
+    '}'
+;
 
 ConIf:
-    'if' condition = ID
+    'if' condition=Condition 'then' '{'
+    action*=Action
+    '}'
+    (otherwise=Otherwise)?
+;
+
+Otherwise:
+'otherwise' '{'
+    action*=Action
+    '}'
+;
+
+
+
+Fight:
+    player=[User] 'attacks the' entity=[Mob] '!'
+;
+
+Discover:
+    player=[User] 'finds' object=[Item]
+;
+
+Condition:
+    (left=Turn | left=INT | left=ID)
+    operator=CompOps 
+    ('level')? 
+    right=INT
+;
+
+Turn:
+  /turns?/
+;
+
+Count:
+'Turn' turn=Turn
+;
+
+CompOps:
+'is less than' | 'is more than' | 'is parted true by' | 'is'
 ;
 
 Comment:

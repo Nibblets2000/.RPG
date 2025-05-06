@@ -1,0 +1,10 @@
+The journey begins with Manny, a level 1000 Wizard
+if Manny is less than level 10 then {
+Manny encounters a level 9 Goblin
+Manny attacks the Goblin!
+}
+otherwise {
+    Manny encounters a level 15 Minotaur
+    Manny attacks the Minotaur!
+}
+What will our hero do?
