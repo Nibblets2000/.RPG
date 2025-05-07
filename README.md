@@ -1,84 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>.RPG - A Programming Langage based on a Role Playing Game.</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+Welcome to .RPG, the programming language written like a Role Playing Game.
 
-<body>
+To ensure that you are able to write and run your code properly, please read the following for an optimal experience.
 
-  <h1>.RPG</h1>
-  <p>A Programming Langage based on a Role Playing Game</p>
+//RUNNING YOUR CODE
+.RPG files can be launched in a terminal in the filepath of the ".RPG" folder. These lines look like this:
 
-  <div class="button-group">
-    <a href="https://github.com/Nibblets2000/.RPG.git" class="btn github">Click and Download from the GitHub!</a>
-  </div>
+    python RPG.py name_of_file.RPG 
 
-  <h2>Begin your journey.</h2>
+The above format will only function properly if your RPG.py, RPG.tx, and .RPG file are all in the same directory. Otherwise, the format to run the code
+via the termial will look like this
 
-  <div class="code-block">
-    The journey begins with You, a level 5 Coder<br />
-    You encounter a Goblin!<br />
-    You fight the Goblin!<br />
-    What will our hero do? <br />
-  </div>
+    python FolderName/RPG.py FolderName/name_of_file.RPG --grammar FolderName/RPG.tx
 
-  <style>
-    body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #000000;
-    margin: 0;
-    padding: 0;
-  }
+"--grammar" is only needed if your RPG.tx file is in a different directory from your source folder; otherwise RPG.tx is used by default and does not need to be specified. As an example, run any of the example programs from the "ExamplePrograms" folder to give it a shot. Just as another example, if you wanted to run NewJourney.RPG, the terminal line would be
 
-  h1 {
-    font-size: 60px;
-    margin-top: 50px;
-    color: #ffffff;
-  }
-
-  p {
-    font-size: 18px;
-    color: #ffffff;
-  }
-
-  .button-group {
-    margin: 20px;
-  }
-
-  .btn {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: white;
-  }
-
-  .github {
-    background-color: #141414;
-  }
-
-  .code-block {
-    background-color: #f4f4f4;
-    display: inline-block;
-    text-align: left;
-    padding: 15px;
-    margin: 10px auto;
-    font-family: 'Times New Roman', Times, serif;
-    white-space: pre-wrap;
-    border-radius: 3px;
-  }
-
-  .footer {
-    color: #28a745;
-    margin-top: 10px;
-  }
-<style>
-  
-</body>
-</html>
+    python RPG.py ExamplePrograms/NewJourney.RPG 
