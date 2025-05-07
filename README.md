@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>.RPG - A Programming Langage based on a Role Playing Game.</title>
   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>.RPG</h1>
+  <p>A Programming Langage based on a Role Playing Game</p>
+
+  <div class="button-group">
+    <a href="https://github.com/Nibblets2000/.RPG.git" class="btn github">Click and Download from the GitHub!</a>
+  </div>
+
+  <h2>Begin your journey.</h2>
+
+  <div class="code-block">
+    The journey begins with You, a level 5 Coder<br />
+    You encounter a Goblin!<br />
+    You fight the Goblin!<br />
+    What will our hero do? <br />
+  </div>
+
   <style>
     body {
     font-family: Arial, sans-serif;
@@ -59,26 +79,6 @@
     margin-top: 10px;
   }
 <style>
-</head>
-
-<body>
-
-  <h1>.RPG</h1>
-  <p>A Programming Langage based on a Role Playing Game</p>
-
-  <div class="button-group">
-    <a href="https://github.com/Nibblets2000/.RPG.git" class="btn github">Click and Download from the GitHub!</a>
-  </div>
-
-  <h2>Begin your journey.</h2>
-
-  <div class="code-block">
-    The journey begins with You, a level 5 Coder<br />
-    You encounter a Goblin!<br />
-    You fight the Goblin!<br />
-    What will our hero do? <br />
-  </div>
-
   
 </body>
 </html>
