@@ -78,6 +78,7 @@ def interpret_action(c, turn=None):
 
             if i % 2 == 0:
                 roll = random.choice(range(1,21))
+
                 print(f"Hero's turn!")
                 if roll <= 5:
                     print(f"{c.player.name} rolls a {roll} and misses! Tragedy!")
@@ -85,8 +86,9 @@ def interpret_action(c, turn=None):
                     print(f"{c.player.name} attacks, rolling a {roll} and dealing {roll + c.player.level} damage!")
                     mHealth -= roll + c.player.level
                 else:
-                    print(f"Critical Success! {c.player.name} rolls a {roll} and lands a hefty strike! for {roll + c.player.level} damage!")
+                    print(f"Critical Success! {c.player.name} rolls a {roll} and lands a hefty strike for {roll + c.player.level} damage!")
                     mHealth -= roll + c.player.level
+
             else:
                 roll = random.choice(range(1,21))
                 print(f"Enemy turn!")
@@ -98,8 +100,10 @@ def interpret_action(c, turn=None):
                 else:
                     print(f"Critical Success! {c.entity.name} rolls a {roll} and lands a hefty strike for {roll + c.entity.level} damage! Oh No!")
                     pHealth -= roll + c.entity.level
+
             i += 1
             print()
+            
             if pHealth <= 0:
                 print(f"{c.player.name} was defeated!")
                 break
@@ -158,8 +162,13 @@ def interpret_action(c, turn=None):
     elif c.__class__.__name__ == "Count":
         print(f"We are on Turn {turn}")
 
-
-
+    elif c.__class__.__name__ == "LookAround":
+        print(f"{c.player.name} looks around the area, discovering")
+        for name in s:
+            if name == c.player.name:
+                continue
+            else:
+                print(f"a {name}!")
     else:
         print(f"Our hero does... nothing?")
 
@@ -177,11 +186,11 @@ def interpret_program(model):
 
 def main(debug=False):
     from textx import metamodel_from_file
-    with open('TheBattle!.RPG', 'r') as f:
+    with open('NewJourney.RPG', 'r') as f:
         print(f.read())
     print()
     rPG_mm = metamodel_from_file('RPG.tx') #Insert grammar file here
-    rPG_model = rPG_mm.model_from_file('TheBattle!.RPG') #Insert program file here
+    rPG_model = rPG_mm.model_from_file('NewJourney.RPG') #Insert program file here
 
 
 

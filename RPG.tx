@@ -48,7 +48,7 @@ Otherwise:
 ;
 
 LookAround:
-    player=ID "looks around"
+    player=[User] "looks around"
 ;
 
 Fight:
